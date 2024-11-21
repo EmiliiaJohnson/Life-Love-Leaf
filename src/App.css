@@ -46,7 +46,7 @@
   background-attachment: fixed;
   background-position: 60px 50px;
   background-size: cover;
-  margin: 0 0 200px 0;
+  margin: 0 0 250px 0;
 }
 .discover-info_wrapper {
   display: grid;
@@ -55,9 +55,11 @@
   justify-items: center;
 }
 .discover-info {
-  margin-top: -150px;
+  margin-top: -200px;
   position: sticky;
-  bottom: 40px;
+  bottom: 100px;
+  height: 450px;
+  box-shadow: 0px 0px 0 1px #f5f5f5;
 }
 .discover-info1 {
   z-index: 5;
@@ -93,7 +95,7 @@
 }
 .discover-info_text2 {
   top: auto;
-  bottom: -16px;
+  bottom: -20px;
   background-color: #b8bab72e;
 }
 .discover-info_text3 {
@@ -101,17 +103,51 @@
 }
 .discover-info_text4 {
   top: auto;
-  bottom: -16px;
+  bottom: -20px;
   background-color: #bfc5b870;
 }
+#items {
+  background: url("./assets/images/bg-3.jpg") no-repeat fixed 100%;
+  margin-top: -50%;
+  padding: 40px;
+}
+.items-title {
+  font-family: "BaiJamjuree-Bold", Arial, Helvetica, sans-serif;
+  -webkit-text-fill-color: #f5f5f5;
+  font-size: 90px;
+  margin: 116px 0 40px 0;
+  line-height: 100px;
+  text-shadow: 3px 3px #016500d9;
+}
+.items-info {
+  background-color: #f5f5f5;
+  padding: 40px;
+  font-size: 20px;
+  max-width: 57%;
+}
+.items-list{
+  backdrop-filter: brightness(0.5) blur(7px);
+}
+.item {
+
+}
+.item-img {
+  height: 200px;
+}
 @media screen and (max-width: 1200px) {
+  .discover-title {
+    margin: 0;
+    font-size: 20vw;
+  }
   .discover-info_wrapper {
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .discover-info {
     margin-top: 50px;
     bottom: 10px;
+    box-shadow: 0px 0px 0 3px #f5f5f5;
   }
   .discover-info2 {
     z-index: 4;
@@ -124,5 +160,24 @@
   .discover-info4 {
     z-index: 2;
     grid-area: 4 / 1 / 5 / 5;
+  }
+  .discover-info_text {
+    width: 210px;
+  }
+  .discover-info_text,
+  .discover-info_text3 {
+    border-radius: 0 0 16px 16px;
+  }
+  .discover-info_text2,
+  .discover-info_text4 {
+    border-radius: 16px 16px 0 0;
+  }
+  .items-title {
+    font-size: 50px;
+    margin-top: 50%;
+    line-height: 70px;
+  }
+  .items-info {
+    max-width: 100%;
   }
 }

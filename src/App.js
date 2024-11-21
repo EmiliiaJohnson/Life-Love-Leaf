@@ -55,6 +55,27 @@ function App() {
           </div>
         </div>
       </section>
+      <section id="items">
+        <h2 className="items-title">
+          Discover <br /> your perfect
+          <br /> houseplant today
+        </h2>
+        <p className="items-info">
+          In our collection you will find over 200 plant varieties, from
+          easy-care greenery to exotic species, each with detailed information
+          to help you choose the perfect addition to your space.
+        </p>
+        <div className="items-list">
+          <div className="item">
+            <p>Monstera</p>
+            <img className="item-img" src={plant4} alt="plant" />
+            <p>Info</p>
+            <p>Info</p>
+            <p>More</p>
+            <p>Price: 1000$</p>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
