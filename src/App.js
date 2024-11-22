@@ -1,5 +1,6 @@
 import "./App.css";
 import Header from "./components/Header/Header";
+import PlantsList from "./components/PlantsList/plants-list";
 import plant1 from "./assets/images/plant1.jpg";
 import plant2 from "./assets/images/plant2.jpg";
 import plant3 from "./assets/images/plant3.jpg";
@@ -66,14 +67,7 @@ function App() {
           to help you choose the perfect addition to your space.
         </p>
         <div className="items-list">
-          <div className="item">
-            <p>Monstera</p>
-            <img className="item-img" src={plant4} alt="plant" />
-            <p>Info</p>
-            <p>Info</p>
-            <p>More</p>
-            <p>Price: 1000$</p>
-          </div>
+          <PlantsList />
         </div>
       </section>
     </>
