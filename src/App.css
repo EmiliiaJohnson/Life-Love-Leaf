@@ -135,10 +135,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px 50px;
-  background-color: #ffffff1a;
   padding: 30px;
-  border-radius: 16px;
-  backdrop-filter: blur(7px);
 }
 @media screen and (max-width: 1200px) {
   .discover-title {
