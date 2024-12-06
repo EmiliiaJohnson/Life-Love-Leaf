@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./plants-list.css";
-import no_plant from "../../assets/images/no-img.png";
+import no_plant from "../../assets/images/no-img.svg";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const getRandomPlantPrice = () => {
@@ -16,18 +16,17 @@ function PlantsList() {
     const fetchPlants = async () => {
       try {
         const response = await fetch(
-          `https://perenual.com/api/species-list?key=${API_KEY}&indoor=1`
+          `https://perenual.com/api/species-list?key=${API_KEY}&hardiness=1-3`
         );
         const data = await response.json();
-        console.log("Raw Data:", data);
         setPlants(data.data);
+        console.log(data.data);
       } catch (err) {
         setError(err.message);
       } finally {
         setLoading(false);
       }
     };
-
     fetchPlants();
   }, []);
 
@@ -38,7 +37,6 @@ function PlantsList() {
     <>
       {plants.map((plant) => (
         <div className="item" id={plant.id} key={plant.id}>
-          <p className="item-name"> {plant.common_name || "No Name"}</p>
           <img
             className="item-img"
             src={
@@ -48,10 +46,9 @@ function PlantsList() {
             }
             alt={plant.common_name}
           />
+          <p className="item-name"> {plant.common_name || "No Name"}</p>
           <p>Info</p>
-          <p>Info</p>
-          <p>More</p>
-          <p>Price: ${getRandomPlantPrice()}</p>
+          <p>${getRandomPlantPrice()}</p>
         </div>
       ))}
     </>

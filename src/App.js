@@ -1,4 +1,18 @@
 import "./App.css";
+import { Provider } from "./components/ui/provider";
+import { Button } from "./components/ui/button";
+import {
+  DrawerActionTrigger,
+  DrawerBackdrop,
+  DrawerBody,
+  DrawerCloseTrigger,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerRoot,
+  DrawerTitle,
+  DrawerTrigger,
+} from "./components/ui/drawer";
 import Header from "./components/Header/Header";
 import PlantsList from "./components/PlantsList/plants-list";
 import plant1 from "./assets/images/plant1.jpg";
@@ -8,7 +22,7 @@ import plant4 from "./assets/images/plant4.jpg";
 
 function App() {
   return (
-    <>
+    <Provider>
       <section id="cover">
         <Header />
         <div className="slogan-wrapper">
@@ -66,11 +80,61 @@ function App() {
           easy-care greenery to exotic species, each with detailed information
           to help you choose the perfect addition to your space.
         </p>
+        <DrawerRoot size="md">
+          <DrawerBackdrop />
+          <DrawerTrigger asChild>
+            <button className="filters-button">Filters</button>
+          </DrawerTrigger>
+          <DrawerContent offset="4" rounded="md">
+            <DrawerHeader>
+              <DrawerTitle>Find your perfect plant</DrawerTitle>
+              <DrawerCloseTrigger />
+            </DrawerHeader>
+            <DrawerBody>
+              <form>
+                <label htmlFor="difficulty">Difficulty:</label>
+                <select name="difficulty" id="difficulty">
+                  <option value="10-13">easy</option>
+                  <option value="5-9">medium</option>
+                  <option value="1-4">hard</option>
+                </select>
+                <label htmlFor="watering">Watering:</label>
+                <select name="watering" id="watering">
+                  <option value="none">none</option>
+                  <option value="minimum">minimum</option>
+                  <option value="average">average</option>
+                  <option value="frequent">frequent</option>
+                </select>
+                <label htmlFor="sunlight">Sunlight:</label>
+                <select name="sunlight" id="sunlight">
+                  <option value="full_shade">full shade</option>
+                  <option value="part_shade">part shade</option>
+                  <option value="full_sun">full sun</option>
+                </select>
+                <label htmlFor="edible">Edible:</label>
+                <input type="checkbox" name="edible" id="edible" />
+                <label htmlFor="poisonous">Poisonous:</label>
+                <input type="checkbox" name="poisonous" id="poisonous" />
+                <label htmlFor="indoor">Indoor:</label>
+                <input type="checkbox" name="indoor" id="indoor" />
+                <DrawerActionTrigger asChild>
+                  <Button variant="outline">Apply</Button>
+                </DrawerActionTrigger>
+              </form>
+            </DrawerBody>
+            {/*<DrawerFooter>*/}
+            {/*  <DrawerActionTrigger asChild>*/}
+            {/*    <Button variant="outline">Cancel</Button>*/}
+            {/*  </DrawerActionTrigger>*/}
+            {/*</DrawerFooter>*/}
+            <DrawerCloseTrigger />
+          </DrawerContent>
+        </DrawerRoot>
         <div className="items-list">
           <PlantsList />
         </div>
       </section>
-    </>
+    </Provider>
   );
 }
 
